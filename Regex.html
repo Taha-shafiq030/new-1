@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex</title>
+    <link rel="stylesheet" href="../bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <script src="../jquery/jquery-3.5.1.min.js"></script>
+    <script src="../bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+</head>
+<style>
+    .container{
+        margin-top: 210px;
+        border: 1px solid black;
+    }
+    h1{
+        text-align: center;
+        font-weight: bold;
+    }
+</style>
+<body>
+    <div class="container col-md-6">
+        <div class="form-group">
+            <h1>Sign in Form</h1>
+            <label for="">User Name</label>
+            <input type="text" class="form-control" required id="uname">
+            <small id="s1" class="mt-2"></small>
+        </div>
+        <div class="form-group">
+            <label for="">Email</label>
+            <input type="email" class="form-control" id="uemail">
+            <small id="s2" class="mt-2"></small>
+        </div>
+        <div class="form-group">
+            <label for="">Password</label>
+            <input type="password" class="form-control" id="upassword">
+            <small id="s3" class="mt-2"></small>
+        </div>
+
+        <button type="submit" id="sub" class="btn btn-success mt-3">Submit</button>
+        <br>
+        <br>
+        <p></p>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#sub").click(function () {
+                let user_name = $("#uname").val();
+                let u_email = $("#uemail").val();
+                let u_password = $("#upassword").val();
+                b1 = $("#uname");
+                b2 = $("#uemail");
+                b3 = $("#upassword");
+                sm1 = $("#s1");
+                sm2 = $("#s2");
+                sm3 = $("#s3");
+                let user_name_regex = /^[A-Za-z\s]{3,}$/;
+                let u_email_regex = /^[\w]{5,}[@][A-Za-z]{5,}[.][A-Za-z]{2,6}$/;
+                let u_password_regex = /^[0-9A-Za-z@#$%^&+=]{8,}$/;
+                let para = $("p");
+
+                // user name start.
+
+                if (user_name_regex.test(user_name)) {
+                    sm1.html("");
+                    b1.css("border", "2px solid rgb(12, 252, 12)");       
+                }
+                else {
+                    sm1.html("Incorrect username.");
+                    sm1.css("color", "red");
+                    b1.css("border", "2px solid red");
+                    
+                }
+
+                // user name End.
+
+                // user email start.
+
+                if (u_email_regex.test(u_email)) {
+
+                    sm2.html("");
+                    b2.css("border", "2px solid rgb(12, 252, 12)");
+                }
+                else {
+                    
+                    sm2.html("Incorrect email ID.");
+                    sm2.css("color", "red");
+                    b2.css("border", "2px solid red");
+                }
+
+                // user email End.
+
+                 // user password start.
+
+                 if (u_password_regex.test(u_password)) {
+                    
+                    sm3.html("");
+                    b3.css("border", "2px solid rgb(12, 252, 12)");
+                }
+                else {
+                    sm3.html("Incorrect password.");
+                    sm3.css("color", "red");
+                    b3.css("border", "2px solid red");
+                    
+                }
+
+                // user password End.
+
+                // After submiting start.
+
+                if (user_name_regex.test(user_name) && u_email_regex.test(u_email) && u_password_regex.test(u_password)){
+                    para.html("You are successfully Sign in");
+                    para.css("color", "green");
+                    
+                }
+
+                // After submiting End.
+
+            })
+        })
+
+    </script>
+</body>
+
+</html>
