@@ -1,0 +1,14 @@
+{
+    "Nakia_Products" : [
+        {"pname":"Nakia C12","price":"35000", "image":"../images/n1.jpg"},
+        {"pname":"Nakia X30","price":"45000", "image":"../images/n2.jpg"},
+        {"pname":"Nakia G60","price":"55000", "image":"../images/n3.jpg"},
+        {"pname":"Nakia C31","price":"30000", "image":"../images/n4.jpg"}
+    ],
+    "Oppo_Products" : [
+        {"pname":"Nakia C12","price":"35000", "image":"../images/O1.jpg"},
+        {"pname":"Nakia X30","price":"45000", "image":"../images/O2.jpg"},
+        {"pname":"Nakia G60","price":"55000", "image":"../images/O3.jpg"},
+        {"pname":"Nakia C31","price":"30000", "image":"../images/O4.jpg"}
+    ]
+}
